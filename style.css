@@ -1,8 +1,11 @@
 :root {
     --create-account: #596D48;
+    --form-label: #1f2937;
     --form-input: #E5E7EB;
     --form-error: red;
     --form-focus: blue;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
 }
 
 @font-face {
@@ -13,7 +16,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    box-sizing: border-box;
 }
 
 body {
@@ -22,37 +25,33 @@ body {
 
 .one {
     height: 100vh;
-    width: calc((1/3) * 100%);
+    width: calc((1/3) * 100vw);
     background-image: url(./img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.two {
-    height: 100vh;
-    width: calc((2/3) * 100%);
 }
 
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
     background-color: rgb(0, 0, 0, .40);
-    margin-top: calc(100vh/4);
+    margin-top: calc(100vh/5);
+    padding: 10px 0;
 }
 
 .logo > img {
-    height: 50%;
-    width: 50%;
+    height: 7rem;
+    width: auto;
 }
 
 .logo > h1 {
     color: white;
     font-family: norse-bold, sans-serif;
+    font-size: 5rem;
 }
 
-footer, a {
+footer, footer a {
     color: white;
 }
 
@@ -60,6 +59,105 @@ footer, a {
     position: sticky;
     top: 100vh;
     text-align: center;
-    font-size: 13px;
+    font-size: 0.80rem;
     padding: 10px;
+}
+
+.two {
+    height: 100vh;
+    width: calc((2/3) * 100%);
+    background-color: #f9fafb;
+}
+
+.form-flex {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 75px;
+}
+
+.form-flex > li {
+    display:flex;
+    flex-direction: column;
+}
+
+.two > * {
+    margin-left: 40px;
+    margin-right: 17vw;
+}
+
+.two > h2 {
+    height: calc((100vh/5) + 7rem + 20px);
+    padding-top: calc(((100vh/5) + 7rem + 20px)/2);
+}
+
+.two .hero {
+    font-size: 1.5vw;
+}
+
+.two > form,
+.two > button,
+.two form input:focus {
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, .2);
+}
+
+.two > form {
+    background-color: #ffffff;
+    margin: 0px;
+    padding-left: 40px;
+    padding-right: calc((1/5) * 100%);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.two form h2 {
+    padding-bottom: 25px;
+}
+
+.two form label {
+    font-size: .8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--form-label);
+}
+
+.two form input {
+    border: 1px solid var(--form-input);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 1rem;
+    
+}
+
+.two form input:focus {
+    outline: none;
+    border: 1px solid var(--form-focus);
+}
+
+.error {
+    outline: none;
+    border: 1px solid var(--form-error);
+}
+
+.two > button[type="submit"] {
+    color: #ffffff;
+    background-color: var(--create-account);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 15px 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.two p {
+    font-size: 1.25rem;
+}
+
+.two p a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--create-account);
 }
