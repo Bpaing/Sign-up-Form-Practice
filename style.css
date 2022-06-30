@@ -135,12 +135,12 @@ footer, footer a {
     border: 1px solid var(--form-focus);
 }
 
-.error {
+.two form input.error {
     outline: none;
     border: 1px solid var(--form-error);
 }
 
-.two > button[type="submit"] {
+.two > button {
     color: #ffffff;
     background-color: var(--create-account);
     border: none;
